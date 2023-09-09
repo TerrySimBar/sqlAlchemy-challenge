@@ -72,6 +72,9 @@ def precipitation():
         precipitation_dict["Precipitation"] = prcp
         precipitation_data.append(precipitation_dict)
 
+    # Close the session
+    session.close()
+    
     # Return the precipitation data as JSON
     return jsonify(precipitation_data)
 
@@ -88,6 +91,9 @@ def stations():
     
     # Create a list for the station data
     station_list = [{'id': id, 'name': loc} for id, loc in session.query(Station.station, Station.name).all()]
+    
+    # Close the session
+    session.close()
     
     # Return the list as JSON
     return jsonify(station_list)
@@ -109,7 +115,10 @@ def tobs():
     
     # Create a dictionary for the temperature observations data   
     temp_obs_dict = {row.date: row.tobs for row in temp_obs_data}
-            
+    
+    # Close the session
+    session.close()
+    
     return jsonify(temp_obs_dict)
 
 
@@ -139,6 +148,9 @@ def temp_range(start,end = '2017-08-23'):
         "TMAX": max_temp
     }
 
+    # Close the session
+    session.close()
+    
     # Return the temperature data as JSON
     return jsonify(range_temp_data)
 
