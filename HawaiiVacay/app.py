@@ -54,15 +54,15 @@ def home():
 # Define the precipitation route
 @app.route('/api/v1.0/precipitation')
 
-
+# Create a function to return the precipitation data as JSON
 def precipitation():
+    
     # Query the database for precipitation data
     session = Session(engine)
     
     results = session.query(Measurement.date, Measurement.prcp).\
         filter(Measurement.date >= '2016-08-23').\
         order_by(Measurement.date).all()
-
     
   # Convert the query results into a dictionary
     precipitation_data = []
@@ -75,12 +75,18 @@ def precipitation():
     # Return the precipitation data as JSON
     return jsonify(precipitation_data)
 
-# Define the stations route
 
+
+# Define the stations route
 @app.route('/api/v1.0/stations')
+
+# Create a function to return the station data as JSON
 def stations():
+    
+    # Query the database for station data
     session = Session(engine)
-    # Create a list of dictionaries containing station data
+    
+    # Create a list for the station data
     station_list = [{'id': id, 'name': loc} for id, loc in session.query(Station.station, Station.name).all()]
     
     # Return the list as JSON
@@ -90,20 +96,25 @@ def stations():
 
 # Define the temp observations route for the most active station
 @app.route('/api/v1.0/tobs')
+
+# Create a function to return the last year of temperature observations data as JSON for the most active station
 def tobs():
+    
+    # Query the database for temperature observations data
     session = Session(engine)
     
     temp_obs_data = session.query(Measurement.date, Measurement.tobs).\
     filter(Measurement.date >= '2016-08-23', Station.station == 'USC00519281').\
         order_by(Measurement.date).all()
-        
+    
+    # Create a dictionary for the temperature observations data   
     temp_obs_dict = {row.date: row.tobs for row in temp_obs_data}
             
     return jsonify(temp_obs_dict)
 
 
 
-# Define the start route
+# Define the start/end routes
 
 @app.route('/api/v1.0/<start>')
 @app.route('/api/v1.0/<start>/<end>')
