@@ -205,16 +205,14 @@ You will need the following software to run the analysis and API scripts:
 
 ---
 #### Usage
-1. Set up a PostgreSQL database server and create a database.
-2. Use pgAdmin or another compatible SQL tool to execute the schema creation script (schema.sql).
-3. Load the provided CSV files into their respective tables.
-4. Execute the analysis queries (analysis.sql) to answer the specified or other appropriate questions.
-5. Review the analysis results presented in tables.
+1. Ensure that you have the appropriate SQLite and CSV files.
+2. Run the ""analysis.ipynb script in an appropriate code editor such as Jupyter Notebook. 
+3. Run the app.py script in an appropriate code editor and render in a web browser cush as Google Chrome with the necessary extensions, for example, to optimize JSON.
 
 #### Contributions
 Contributions to this project are highly encouraged! If you wish to contribute, please follow these guidelines:
 
-- Fork the sql-challenge repository and clone it locally.
+- Fork the sqlAlchemy-challenge repository and clone it locally.
 - Create a new branch for your feature or bug fix.
 - Commit your changes with descriptive commit messages.
 - Push your branch to your forked repository.
@@ -226,8 +224,3 @@ If you encounter any issues or have suggestions for improvements, please open an
 
 ### License
 These projects are licensed under the MIT License. Feel free to use, modify, and distribute the code as per the terms of the license. 
-
-
-<img src = "Images/classes.png" width="1000"/>
-<br>
-<br>
