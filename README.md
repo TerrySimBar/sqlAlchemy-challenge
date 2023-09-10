@@ -189,7 +189,7 @@ You will need the following software to run the analysis and API scripts:
 
 ---
 **4.** Define start/end routes to provide data for an input date or date range.
-#### With input start date of Aug 30, 2016
+#### With input date of Aug 30, 2016
 <img src = "Images/api_start.png" width="500"/>
 <br>
 
