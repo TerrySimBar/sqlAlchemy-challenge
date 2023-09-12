@@ -207,7 +207,7 @@ You will need the following software to run the analysis and API scripts:
 #### Usage
 1. Ensure that you have the appropriate SQLite and CSV files.
 2. Run the ""analysis.ipynb script in an appropriate code editor such as Jupyter Notebook. 
-3. Run the app.py script in an appropriate code editor and render in a web browser cush as Google Chrome with the necessary extensions, for example, to optimize JSON.
+3. Run the app.py script in an appropriate code editor and render in a web browser such as Google Chrome with the necessary extensions, to optimize JSON, for example.
 
 #### Contributions
 Contributions to this project are highly encouraged! If you wish to contribute, please follow these guidelines:
